@@ -1,0 +1,20 @@
+{
+  "name": "pdf-shared",
+  "version": "1.0.0",
+  "description": "PDF generator shared between Sundes Frontend and Backend",
+  "homepage": "https://github.com/SundesCloud/pdf-shared#readme",
+  "bugs": {
+    "url": "https://github.com/SundesCloud/pdf-shared/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SundesCloud/pdf-shared.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
