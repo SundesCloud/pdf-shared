@@ -30,7 +30,7 @@ const margin = 75;
  * Componente puro de PDF para reservaciones
  * No contiene lógica, solo renderiza con los datos proporcionados
  */
-export function ReservationPDFPure({
+export function ReservationPDF({
   reservation,
   destination,
   financialDetails,
