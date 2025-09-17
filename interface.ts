@@ -2,7 +2,7 @@
  * Props para el componente ReservationPDF sin ninguna lógica
  * Contiene todos los datos pre-procesados necesarios para renderizar el PDF
  */
-export interface ReservationPDFPureProps {
+export interface ReservationPDFProps {
   // Información básica de la reserva
   reservation: {
     id: string
@@ -123,16 +123,3 @@ export interface ReservationPDFPureProps {
   }
 }
 
-/**
- * Props para el botón de descarga del PDF
- */
-export interface ReservationPDFButtonPureProps {
-  // Datos completos para el PDF
-  pdfData: ReservationPDFPureProps
-  // Nombre del archivo PDF
-  fileName: string
-  // Texto del botón
-  buttonText: string
-  // Ancho del botón
-  buttonWidth: string
-}

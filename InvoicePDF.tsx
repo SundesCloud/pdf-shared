@@ -6,14 +6,9 @@ import {
   StyleSheet,
   Font,
   Link,
-  PDFDownloadLink,
 } from "@react-pdf/renderer";
-import {
-  ReservationPDFPureProps,
-  ReservationPDFButtonPureProps,
-} from "./interface.ts";
+import { ReservationPDFProps } from "./interface.ts";
 import { BLACK, GREY_20, WHITE, GREY_100 } from "./style.ts";
-import Button from "../../Materials/Button/Button";
 
 // Registrar fuentes
 Font.register({
@@ -44,7 +39,7 @@ export function ReservationPDFPure({
   cancellationPolicies,
   translations,
   visual,
-}: ReservationPDFPureProps): JSX.Element {
+}: ReservationPDFProps) {
   const leseeFinalDetails = () => {
     return (
       <>
@@ -390,33 +385,6 @@ export function ReservationPDFPure({
         </View>
       </Page>
     </Document>
-  );
-}
-
-/**
- * Botón para descargar el PDF de reserva
- */
-export default function ReservationPDFButtonPure({
-  pdfData,
-  fileName,
-  buttonText,
-  buttonWidth,
-}: ReservationPDFButtonPureProps): JSX.Element {
-  return (
-    <PDFDownloadLink
-      document={<ReservationPDFPure {...pdfData} />}
-      fileName={fileName}
-      style={buttonWidth === "100%" ? { width: "100%" } : {}}
-    >
-      {
-        //@ts-ignore
-        ({ loading }) => (
-          <Button disabled={loading} buttonWidth={buttonWidth}>
-            <>{buttonText}</>
-          </Button>
-        )
-      }
-    </PDFDownloadLink>
   );
 }
 
