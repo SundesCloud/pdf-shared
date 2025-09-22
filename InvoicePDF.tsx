@@ -30,16 +30,23 @@ const margin = 75;
  * Componente puro de PDF para reservaciones
  * No contiene lógica, solo renderiza con los datos proporcionados
  */
-export function ReservationPDF({
-  reservation,
-  destination,
-  financialDetails,
-  costs,
-  guestsDetails,
-  cancellationPolicies,
-  translations,
-  owner,
-}: ReservationPDFProps) {
+
+type Props = {
+  reservationData: ReservationPDFProps;
+  owner: boolean;
+};
+
+export function ReservationPDF({ reservationData, owner }: Props) {
+  const {
+    reservation,
+    destination,
+    financialDetails,
+    costs,
+    guestsDetails,
+    cancellationPolicies,
+    translations,
+  } = reservationData;
+
   const leseeFinalDetails = () => {
     return (
       <>

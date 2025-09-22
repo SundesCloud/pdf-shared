@@ -115,6 +115,4 @@ export interface ReservationPDFProps {
       roomDistribution: string;
     };
   };
-
-  owner: boolean;
 }
