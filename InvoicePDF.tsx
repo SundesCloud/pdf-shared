@@ -7,8 +7,8 @@ import {
   Font,
   Link,
 } from "@react-pdf/renderer";
-import { ReservationPDFProps } from "./interface.ts";
-import { BLACK, GREY_20, WHITE, GREY_100 } from "./style.ts";
+import { ReservationPDFProps } from "./interface";
+import { BLACK, GREY_20, WHITE, GREY_100 } from "./style";
 
 // Registrar fuentes
 Font.register({
