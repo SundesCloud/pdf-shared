@@ -38,7 +38,7 @@ export function ReservationPDF({
   guestsDetails,
   cancellationPolicies,
   translations,
-  visual,
+  owner,
 }: ReservationPDFProps) {
   const leseeFinalDetails = () => {
     return (
@@ -367,7 +367,7 @@ export function ReservationPDF({
               </View>
             ))}
           </View>
-          {visual.owner ? ownerFinalDetails() : leseeFinalDetails()}
+          {owner ? ownerFinalDetails() : leseeFinalDetails()}
           <>
             <Text style={classes.detailsHead}>Cancellation Policy | EN:</Text>
             <View style={classes.details}>
