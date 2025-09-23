@@ -41,7 +41,8 @@ export function ReservationPDF({ reservationData, owner }: Props) {
     reservation,
     destination,
     financialDetails,
-    costs,
+    guestCosts,
+    ownerCosts,
     guestsDetails,
     cancellationPolicies,
     translations,
@@ -233,6 +234,8 @@ export function ReservationPDF({ reservationData, owner }: Props) {
       </>
     );
   };
+
+  const costs = owner ? ownerCosts : guestCosts;
 
   return (
     <Document>

@@ -39,10 +39,15 @@ export interface ReservationPDFProps {
   };
 
   // Costos desglosados para mostrar en la tabla
-  costs: Array<{
+  guestCosts: Array<{
     name: string;
     detail: string;
-    total: string; // Ya formateado con la moneda
+    total: string;
+  }>;
+  ownerCosts: Array<{
+    name: string;
+    detail: string;
+    total: string;
   }>;
 
   // Detalles de los huéspedes formateados
