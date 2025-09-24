@@ -347,7 +347,7 @@ const classes = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'baseline',
     flexDirection: 'row',
-    marginBottom: 25,
+    marginBottom: 20,
   },
   tableNoMargin: {
     width: `${margin - 4}vw`,
@@ -361,7 +361,7 @@ const classes = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'column',
-    marginBottom: 25,
+    marginBottom: 20,
   },
   subTable: {
     display: 'flex',
@@ -387,7 +387,7 @@ const classes = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'row',
     minHeight: 30,
-    marginBottom: 25,
+    marginBottom: 20,
   },
   row: {
     display: 'flex',
