@@ -141,7 +141,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
       <>
         <Text style={classes.sectionTitle}>{translations.earnings}</Text>
         <View style={classes.tableColumn}>
-          <View style={classes.row}>
+          {/* <View style={classes.row}>
             <Text style={[classes.cell, classes.black]}>
               {translations.guestPays}:
             </Text>
@@ -158,7 +158,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                 {financialDetails.serviceFee}
               </Text>
             </View>
-          </View>
+          </View> */}
           <View style={classes.row}>
             <Text style={[classes.cell, classes.black]}>
               {translations.securityDeposit}:
