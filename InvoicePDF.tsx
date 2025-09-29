@@ -6,6 +6,7 @@ import {
   Document,
   StyleSheet,
   Link,
+  Image,
 } from "@react-pdf/renderer";
 import { ReservationPDFProps } from "./interface";
 import { BLACK, GREY_20, WHITE, GREY_100 } from "./style";
@@ -229,7 +230,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
         <View style={classes.section}>
           <View style={classes.header}>
             <View>
-              <Text style={classes.logo}>SUNDES</Text>
+              <Image style={classes.logo} src="./img/sundes-negro.png" />
             </View>
             <View style={classes.wrapper}>
               <Text style={classes.text}>
@@ -406,9 +407,8 @@ const classes = StyleSheet.create({
     marginBottom: 10,
   },
   logo: {
-    fontFamily: "Helvetica-Bold",
-    color: GREY_100,
-    fontSize: 35,
+    width: 80,
+    height: 35,
   },
   section: {
     paddingTop: 0,
