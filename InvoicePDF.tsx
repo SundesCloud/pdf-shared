@@ -230,7 +230,10 @@ export function ReservationPDF({ reservationData, owner }: Props) {
         <View style={classes.section}>
           <View style={classes.header}>
             <View>
-              <Image style={classes.logo} src="/img/sundes-negro.png" />
+              <Image
+                style={classes.logo}
+                src={require("https://firebasestorage.googleapis.com/v0/b/sundes-production.appspot.com/o/images%2Fsundes-negro.png?alt=media&token=39ac8b54-b222-4ebf-954a-5ce79677681e")}
+              />
             </View>
             <View style={classes.wrapper}>
               <Text style={classes.text}>
