@@ -10,7 +10,11 @@ import {
 } from "@react-pdf/renderer";
 import { ReservationPDFProps } from "./interface";
 import { BLACK, GREY_20, WHITE, GREY_100 } from "./style";
-import { SUNDES_LOGO_BASE64 } from "./logo";
+
+const SUNDES_LOGO_BASE64 =
+  "data:image/png;base64,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";
+
+const margin = 75;
 
 /**
  * Componente puro de PDF para reservaciones
@@ -390,9 +394,13 @@ const classes = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: WHITE,
     color: BLACK,
+    width: "100vw",
     fontFamily: "Helvetica",
+    alignItems: "center",
   },
   header: {
+    width: "100%",
+    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     paddingBottom: 10,
@@ -408,8 +416,11 @@ const classes = StyleSheet.create({
   section: {
     paddingTop: 0,
     flexGrow: 1,
+    width: `${margin}vw`,
+    alignItems: "center",
   },
   sectionTitle: {
+    width: `${margin}vw`,
     backgroundColor: GREY_20,
     fontSize: 11,
     padding: 5,
@@ -417,36 +428,47 @@ const classes = StyleSheet.create({
     marginBottom: 5,
   },
   table: {
+    width: `${margin - 4}vw`,
+    display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
     flexDirection: "row",
     marginBottom: 20,
   },
   tableNoMargin: {
+    width: `${margin - 4}vw`,
+    display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
     flexDirection: "row",
   },
   tableColumn: {
+    width: `${margin - 4}vw`,
+    display: "flex",
     justifyContent: "space-between",
     flexDirection: "column",
     marginBottom: 20,
   },
   subTable: {
+    display: "flex",
+    width: "35vw",
     flexDirection: "column",
     alignItems: "center",
-    width: 250,
   },
   subTableRow: {
+    display: "flex",
+    width: "35vw",
     justifyContent: "space-between",
     flexDirection: "row",
-    width: 250,
   },
   wrapper: {
+    display: "flex",
     flexDirection: "column",
     alignItems: "flex-end",
   },
   tableRow: {
+    display: "flex",
+    width: `${margin - 4}vw`,
     justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "row",
@@ -454,12 +476,16 @@ const classes = StyleSheet.create({
     marginBottom: 20,
   },
   row: {
+    display: "flex",
+    width: `${margin - 4}vw`,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
     minHeight: 30,
   },
   rowTight: {
+    display: "flex",
+    width: `${margin - 4}vw`,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
@@ -482,14 +508,14 @@ const classes = StyleSheet.create({
     fontSize: 9,
   },
   cellTight: {
-    marginHorizontal: 3,
-    paddingHorizontal: 3,
+    margin: "0 3",
+    padding: "0 3",
     fontSize: 9,
     width: 120,
   },
   cellFlexTight: {
-    marginHorizontal: 3,
-    paddingHorizontal: 3,
+    margin: "0 3",
+    padding: "0 3",
     fontSize: 9,
   },
   black: {
@@ -498,17 +524,20 @@ const classes = StyleSheet.create({
   },
   right: {
     width: 90,
+    display: "flex",
     justifyContent: "flex-end",
     flexDirection: "row",
   },
   details: {
     fontSize: 6,
     marginTop: 5,
+    width: `${margin}vw`,
     textAlign: "justify",
   },
   detailsHead: {
     marginTop: 20,
     fontSize: 7,
+    width: `${margin}vw`,
     textAlign: "justify",
   },
   text: {
