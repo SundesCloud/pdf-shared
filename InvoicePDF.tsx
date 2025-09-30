@@ -12,8 +12,6 @@ import { ReservationPDFProps } from "./interface";
 import { BLACK, GREY_20, WHITE, GREY_100 } from "./style";
 import { SUNDES_LOGO_BASE64 } from "./logo";
 
-const margin = 75;
-
 /**
  * Componente puro de PDF para reservaciones
  * No contiene lógica, solo renderiza con los datos proporcionados
@@ -392,13 +390,9 @@ const classes = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: WHITE,
     color: BLACK,
-    width: "100vw",
     fontFamily: "Helvetica",
-    alignItems: "center",
   },
   header: {
-    width: "100%",
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     paddingBottom: 10,
@@ -414,11 +408,8 @@ const classes = StyleSheet.create({
   section: {
     paddingTop: 0,
     flexGrow: 1,
-    width: `${margin}vw`,
-    alignItems: "center",
   },
   sectionTitle: {
-    width: `${margin}vw`,
     backgroundColor: GREY_20,
     fontSize: 11,
     padding: 5,
@@ -426,47 +417,36 @@ const classes = StyleSheet.create({
     marginBottom: 5,
   },
   table: {
-    width: `${margin - 4}vw`,
-    display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
     flexDirection: "row",
     marginBottom: 20,
   },
   tableNoMargin: {
-    width: `${margin - 4}vw`,
-    display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
     flexDirection: "row",
   },
   tableColumn: {
-    width: `${margin - 4}vw`,
-    display: "flex",
     justifyContent: "space-between",
     flexDirection: "column",
     marginBottom: 20,
   },
   subTable: {
-    display: "flex",
-    width: "35vw",
     flexDirection: "column",
     alignItems: "center",
+    width: 250,
   },
   subTableRow: {
-    display: "flex",
-    width: "35vw",
     justifyContent: "space-between",
     flexDirection: "row",
+    width: 250,
   },
   wrapper: {
-    display: "flex",
     flexDirection: "column",
     alignItems: "flex-end",
   },
   tableRow: {
-    display: "flex",
-    width: `${margin - 4}vw`,
     justifyContent: "flex-start",
     alignItems: "center",
     flexDirection: "row",
@@ -474,16 +454,12 @@ const classes = StyleSheet.create({
     marginBottom: 20,
   },
   row: {
-    display: "flex",
-    width: `${margin - 4}vw`,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
     minHeight: 30,
   },
   rowTight: {
-    display: "flex",
-    width: `${margin - 4}vw`,
     justifyContent: "space-between",
     alignItems: "center",
     flexDirection: "row",
@@ -506,14 +482,14 @@ const classes = StyleSheet.create({
     fontSize: 9,
   },
   cellTight: {
-    margin: "0 3",
-    padding: "0 3",
+    marginHorizontal: 3,
+    paddingHorizontal: 3,
     fontSize: 9,
     width: 120,
   },
   cellFlexTight: {
-    margin: "0 3",
-    padding: "0 3",
+    marginHorizontal: 3,
+    paddingHorizontal: 3,
     fontSize: 9,
   },
   black: {
@@ -522,20 +498,17 @@ const classes = StyleSheet.create({
   },
   right: {
     width: 90,
-    display: "flex",
     justifyContent: "flex-end",
     flexDirection: "row",
   },
   details: {
     fontSize: 6,
     marginTop: 5,
-    width: `${margin}vw`,
     textAlign: "justify",
   },
   detailsHead: {
     marginTop: 20,
     fontSize: 7,
-    width: `${margin}vw`,
     textAlign: "justify",
   },
   text: {
