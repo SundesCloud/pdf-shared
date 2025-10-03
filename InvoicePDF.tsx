@@ -410,7 +410,7 @@ const classes = StyleSheet.create({
     marginBottom: 10,
   },
   logo: {
-    width: 80,
+    width: 120,
     height: 35,
   },
   section: {
