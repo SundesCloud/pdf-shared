@@ -53,8 +53,8 @@ export interface ReservationPDFProps {
   // Detalles de los huéspedes formateados
   guestsDetails: string;
 
-  // Lista de amenities
-  amenities: string[];
+  // Lista de servicios incluidos
+  includedServices: string[];
 
   // Políticas de cancelación
   cancellationPolicies: {
