@@ -53,6 +53,9 @@ export interface ReservationPDFProps {
   // Detalles de los huéspedes formateados
   guestsDetails: string;
 
+  // Lista de amenities
+  amenities: string[];
+
   // Políticas de cancelación
   cancellationPolicies: {
     english: string;
@@ -101,6 +104,7 @@ export interface ReservationPDFProps {
     // Notas para huéspedes
     guestNotes: {
       securityDepositInfo: string;
+      servicesInfo: string;
       overCapacity1: string;
       overCapacity2: string;
       overCapacity3: string;
