@@ -36,7 +36,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
     guestsDetails,
     cancellationPolicies,
     translations,
-    includedServices,
+    extraNotes,
   } = reservationData;
 
   const leseeFinalDetails = () => {
@@ -119,15 +119,21 @@ export function ReservationPDF({ reservationData, owner }: Props) {
         <Text style={classes.detailsHead}>{translations.notes}</Text>
         <Text style={classes.details}>
           {translations.guestNotes.securityDepositInfo}{" "}
-          {includedServices.length > 0 && (
+          {extraNotes.includedServices.length > 0 && (
             <>
               {" "}
               {translations.guestNotes.servicesInfo}{" "}
-              {includedServices.join(", ")}
+              {extraNotes.includedServices.join(", ")}
               {"."}
             </>
           )}
         </Text>
+        {extraNotes.otherRules !== "" && (
+          <Text style={classes.details}>{extraNotes.otherRules}</Text>
+        )}
+        {extraNotes.knownThings !== "" && (
+          <Text style={classes.details}>{extraNotes.knownThings}</Text>
+        )}
         <Text style={classes.details}>
           {translations.guestNotes.overCapacity1}
           {destination.guestNumber}
