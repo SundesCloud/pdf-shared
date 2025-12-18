@@ -66,6 +66,8 @@ export interface ReservationPDFProps {
     englishNotes: string;
     spanish: string;
     spanishNotes: string;
+    englishSundesCancellation: string;
+    spanishSundesCancellation: string;
   };
 
   // Traducciones necesarias
