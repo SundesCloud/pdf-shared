@@ -388,6 +388,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
             <View style={classes.details}>
               <Text>{cancellationPolicies.english}</Text>
               <Text>{cancellationPolicies.englishNotes}</Text>
+              <Text>{cancellationPolicies.englishSundesCancellation}</Text>
             </View>
             <Text style={classes.detailsHead}>
               Política de Cancelación | ES:
@@ -395,6 +396,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
             <View style={classes.details}>
               <Text>{cancellationPolicies.spanish}</Text>
               <Text>{cancellationPolicies.spanishNotes}</Text>
+              <Text>{cancellationPolicies.spanishSundesCancellation}</Text>
             </View>
           </>
         </View>
