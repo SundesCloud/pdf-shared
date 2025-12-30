@@ -105,6 +105,7 @@ export interface ReservationPDFProps {
     changeType: string;
     notes: string;
     terms: string;
+    reservationTerms: string;
     download: string;
 
     // Notas para huéspedes

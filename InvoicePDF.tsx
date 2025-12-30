@@ -398,6 +398,9 @@ export function ReservationPDF({ reservationData, owner }: Props) {
               <Text>{cancellationPolicies.spanishNotes}</Text>
               <Text>{cancellationPolicies.spanishSundesCancellation}</Text>
             </View>
+            <View style={classes.details}>
+              <Text>{translations.reservationTerms}</Text>
+            </View>
           </>
         </View>
       </Page>
