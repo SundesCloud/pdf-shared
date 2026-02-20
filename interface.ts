@@ -115,6 +115,7 @@ export interface ReservationPDFProps {
       overCapacity1: string;
       overCapacity2: string;
       overCapacity3: string;
+      overCapacity4: string;
       parties: string;
       pets: string;
       fine: string;

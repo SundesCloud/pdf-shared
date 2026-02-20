@@ -136,11 +136,14 @@ export function ReservationPDF({ reservationData, owner }: Props) {
         )}
         <Text style={classes.details}>
           {translations.guestNotes.overCapacity1}
-          {destination.guestNumber}
-          {translations.guestNotes.overCapacity2}
         </Text>
         <Text style={classes.details}>
+          {translations.guestNotes.overCapacity2}
+          {destination.guestNumber}
           {translations.guestNotes.overCapacity3}
+        </Text>
+        <Text style={classes.details}>
+          {translations.guestNotes.overCapacity4}
         </Text>
         <Text style={classes.details}>{translations.guestNotes.parties}</Text>
         <Text style={classes.details}>{translations.guestNotes.pets}</Text>
