@@ -354,6 +354,14 @@ export function ReservationPDF({ reservationData, owner }: Props) {
               <Text style={classes.cellFlex}>{guestsDetails}</Text>
             </View>
           </View>
+          <View style={classes.tableRow}>
+            <Text style={[classes.tableCell, classes.black]}>
+              {translations.groupType}
+            </Text>
+            <View>
+              <Text style={classes.cellFlex}>{reservation.groupType}</Text>
+            </View>
+          </View>
           <Text style={classes.sectionTitle}>
             {translations.bookingDetails}
           </Text>
