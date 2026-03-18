@@ -20,6 +20,7 @@ export interface ReservationPDFProps {
     securityDeposit: string;
     photographyDiscountValue?: string;
     changeType?: number;
+    groupType?: string;
   };
 
   // Información del destino
@@ -107,6 +108,8 @@ export interface ReservationPDFProps {
     terms: string;
     reservationTerms: string;
     download: string;
+    groupType: string;
+    
 
     // Notas para huéspedes
     guestNotes: {
