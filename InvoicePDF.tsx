@@ -1,13 +1,6 @@
+
 import React from "react";
-import {
-  Page,
-  Text,
-  View,
-  Document,
-  StyleSheet,
-  Link,
-  Image,
-} from "@react-pdf/renderer";
+import { Page, Text, View, Document, StyleSheet, Link, Image } from '@react-pdf/renderer'
 import { ReservationPDFProps } from "./interface";
 import { BLACK, GREY_20, WHITE, GREY_100 } from "./style";
 
@@ -337,7 +330,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                 </Text>
                 <View style={classes.right}>
                   <Link
-                    src={"www.sundes.com/cancellation-policy"}
+                    src={`www.sundes.com/cancellation-policy/${reservation.cancellationPolicy === 'Cancelation Chile' ? '0' : '1'}`}
                     style={classes.cellFlex}
                   >
                     <Text>{translations.cancellationStandard}</Text>
