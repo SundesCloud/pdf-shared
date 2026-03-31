@@ -1,6 +1,13 @@
-
 import React from "react";
-import { Page, Text, View, Document, StyleSheet, Link, Image } from '@react-pdf/renderer'
+import {
+  Page,
+  Text,
+  View,
+  Document,
+  StyleSheet,
+  Link,
+  Image,
+} from "@react-pdf/renderer";
 import { ReservationPDFProps } from "./interface";
 import { BLACK, GREY_20, WHITE, GREY_100 } from "./style";
 
@@ -298,6 +305,19 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                   <Text style={classes.cellFlex}>{destination.country}</Text>
                 </View>
               </View>
+
+              {reservation.nationality && (
+                <View style={classes.subTableRow}>
+                  <Text style={[classes.cell, classes.black]}>
+                    {translations.nationality}
+                  </Text>
+                  <View style={classes.right}>
+                    <Text style={classes.cellFlex}>
+                      {reservation.nationality}
+                    </Text>
+                  </View>
+                </View>
+              )}
             </View>
             <View style={classes.subTable}>
               <View style={classes.subTableRow}>
@@ -330,7 +350,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                 </Text>
                 <View style={classes.right}>
                   <Link
-                    src={`www.sundes.com/cancellation-policy/${reservation.cancellationPolicy === 'Cancelation Chile' ? '0' : '1'}`}
+                    src={`www.sundes.com/cancellation-policy/${reservation.cancellationPolicy === "Cancelation Chile" ? "0" : "1"}`}
                     style={classes.cellFlex}
                   >
                     <Text>{translations.cancellationStandard}</Text>
