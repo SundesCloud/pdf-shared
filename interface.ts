@@ -21,6 +21,7 @@ export interface ReservationPDFProps {
     photographyDiscountValue?: string;
     changeType?: number;
     groupType?: string;
+    nationality?: string;
   };
 
   // Información del destino
@@ -109,7 +110,7 @@ export interface ReservationPDFProps {
     reservationTerms: string;
     download: string;
     groupType: string;
-    
+    nationality: string;
 
     // Notas para huéspedes
     guestNotes: {
