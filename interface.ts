@@ -98,6 +98,7 @@ export interface ReservationPDFProps {
     balanceDue: string;
     paymentConfirm: string;
     firstPayment: string;
+    secondPayment: string;
     balanceOwed: string;
     guestPays: string;
     serviceFee: string;

@@ -36,10 +36,34 @@ export function ReservationPDF({ reservationData, owner }: Props) {
       <>
         <Text style={classes.sectionTitle}>{translations.payment}</Text>
         <View style={classes.tableColumn}>
-          {financialDetails.status === 'Second Half Payment Invoice' ? (
+          <>
+            <View style={[classes.row]}>
+              <Text style={[classes.cell, classes.larger]}>{translations.paymentConfirm}</Text>
+              <View style={classes.right}>
+                <Text style={classes.cellFlex}>{financialDetails.amount}</Text>
+              </View>
+            </View>
+            <View style={classes.rowTight}>
+              <Text style={classes.cellTight}>{translations.firstPayment}</Text>
+              <View style={classes.right}>
+                <Text style={classes.cellFlexTight}>{reservation.created}</Text>
+              </View>
+            </View>
+          </>
+          {financialDetails.status === 'Full Payment Invoice' && (
             <>
-              <View style={[classes.row]}>
-                <Text style={[classes.cell, classes.larger]}>{translations.requested}</Text>
+              <View style={[classes.rowTight]}>
+                <Text style={classes.cellTight}>{translations.secondPayment}</Text>
+                <View style={classes.right}>
+                  <Text style={classes.cellFlexTight}>{financialDetails.halfCancellationDaysFormatted}</Text>
+                </View>
+              </View>
+            </>
+          )}
+          {financialDetails.status === 'Second Half Payment Invoice' && (
+            <>
+              <View style={[classes.rowLine]}>
+                <Text style={[classes.cell, classes.larger]}>{translations.balanceOwed}</Text>
                 <View style={classes.right}>
                   <Text style={classes.cellFlex}>{financialDetails.amount}</Text>
                 </View>
@@ -48,21 +72,6 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                 <Text style={classes.cellTight}>{translations.balanceDue}</Text>
                 <View style={classes.right}>
                   <Text style={classes.cellFlexTight}>{financialDetails.halfCancellationDaysFormatted}</Text>
-                </View>
-              </View>
-            </>
-          ) : (
-            <>
-              <View style={[classes.row]}>
-                <Text style={[classes.cell, classes.larger]}>{translations.paymentConfirm}</Text>
-                <View style={classes.right}>
-                  <Text style={classes.cellFlex}>{financialDetails.amount}</Text>
-                </View>
-              </View>
-              <View style={classes.rowTight}>
-                <Text style={classes.cellTight}>{translations.firstPayment}</Text>
-                <View style={classes.right}>
-                  <Text style={classes.cellFlexTight}>{reservation.created}</Text>
                 </View>
               </View>
             </>
