@@ -62,7 +62,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
           )}
           {financialDetails.status === 'Second Half Payment Invoice' && (
             <>
-              <View style={[classes.rowLine]}>
+              <View style={[classes.row, classes.line]}>
                 <Text style={[classes.cell, classes.larger]}>{translations.balanceOwed}</Text>
                 <View style={classes.right}>
                   <Text style={classes.cellFlex}>{financialDetails.amount}</Text>
