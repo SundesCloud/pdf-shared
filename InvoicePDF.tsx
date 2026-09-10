@@ -50,7 +50,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
               </View>
             </View>
           </>
-          {financialDetails.status === 'Full Payment Invoice' && (
+          {financialDetails.status === 'Full Payment Invoice' && financialDetails.halfCancellationDaysFormatted !== reservation.checkIn && (
             <>
               <View style={[classes.rowTight]}>
                 <Text style={classes.cellTight}>{translations.secondPayment}</Text>
