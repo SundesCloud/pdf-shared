@@ -151,21 +151,11 @@ export interface PropertyData {
   heroImage: string;
   images: string[];
   facilities: string[];
-  groundFloorDetails: string[];
-  mezzanineDetails: string[];
-  firstFloorDetails: string[];
-  outsideDetails: string[];
-  otherDetails: string[];
-  localAmenities: LocalAmenity[];
-  whatWeLove: string[];
-  whatYouShouldKnow: string[];
   termsAndConditions: {
     checkIn: string;
     checkOut: string;
-    energyCosts: string;
-    linenTowels: string;
     smokingAllowed: boolean;
-    minimumStay: string;
+    suitableForEvents: boolean;
   };
   translations: Translations;
 }

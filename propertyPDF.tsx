@@ -187,62 +187,6 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
           </View>
         )}
 
-        {/* Planta Baja */}
-        <Text style={{ fontFamily: 'Helvetica-Bold', marginTop: 6, marginBottom: 4 }}>
-          {data.translations.groundFloor}
-        </Text>
-        <View style={styles.listContainer}>
-          {data.groundFloorDetails.map((item, idx) => (
-            <View key={idx} style={styles.bulletPoint}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={styles.listText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-
-        {/* Mezzanine */}
-        {data.mezzanineDetails.length > 0 && (
-          <>
-            <Text style={{ fontFamily: 'Helvetica-Bold', marginTop: 6, marginBottom: 4 }}>
-              {data.translations.mezzanine}
-            </Text>
-            <View style={styles.listContainer}>
-              {data.mezzanineDetails.map((item, idx) => (
-                <View key={idx} style={styles.bulletPoint}>
-                  <Text style={styles.bullet}>•</Text>
-                  <Text style={styles.listText}>{item}</Text>
-                </View>
-              ))}
-            </View>
-          </>
-        )}
-
-        {/* Primera Planta */}
-        <Text style={{ fontFamily: 'Helvetica-Bold', marginTop: 6, marginBottom: 4 }}>
-          {data.translations.firstFloor}
-        </Text>
-        <View style={styles.listContainer}>
-          {data.firstFloorDetails.map((item, idx) => (
-            <View key={idx} style={styles.bulletPoint}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={styles.listText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-
-        {/* Exterior y Otros */}
-        <Text style={{ fontFamily: 'Helvetica-Bold', marginTop: 6, marginBottom: 4 }}>
-          {data.translations.outside}
-        </Text>
-        <View style={styles.listContainer}>
-          {data.outsideDetails.map((item, idx) => (
-            <View key={idx} style={styles.bulletPoint}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={styles.listText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-
         <View style={styles.footer} fixed>
           <Text>{data.title}</Text>
           <Text render={({ pageNumber, totalPages }) => `${data.translations.pageLabel} ${pageNumber} / ${totalPages}`} />
@@ -250,37 +194,6 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
       </Page>
 
       {/* PÁGINA 3: Ubicación, Servicios Cercanos y Términos */}
-      <Page size="A4" style={styles.page}>
-        <Text style={styles.sectionTitle}>{data.translations.localAmenitiesTitle}</Text>
-        <View style={{ marginBottom: 12 }}>
-          {data.localAmenities.map((amenity, idx) => (
-            <View key={idx} style={styles.tableRow}>
-              <Text style={styles.tableLabel}>{amenity.label}</Text>
-              <Text style={styles.tableValue}>{amenity.value}</Text>
-            </View>
-          ))}
-        </View>
-
-        <Text style={styles.sectionTitle}>{data.translations.whatWeLoveTitle}</Text>
-        <View style={styles.listContainer}>
-          {data.whatWeLove.map((item, idx) => (
-            <View key={idx} style={styles.bulletPoint}>
-              <Text style={styles.bullet}>♥</Text>
-              <Text style={styles.listText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-
-        <Text style={styles.sectionTitle}>{data.translations.whatYouShouldKnowTitle}</Text>
-        <View style={styles.listContainer}>
-          {data.whatYouShouldKnow.map((item, idx) => (
-            <View key={idx} style={styles.bulletPoint}>
-              <Text style={styles.bullet}>!</Text>
-              <Text style={styles.listText}>{item}</Text>
-            </View>
-          ))}
-        </View>
-
         <Text style={styles.sectionTitle}>{data.translations.termsTitle}</Text>
         <View style={styles.tableRow}>
           <Text style={styles.tableLabel}>{data.translations.checkInLabel}</Text>
@@ -294,6 +207,12 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
           <Text style={styles.tableLabel}>{data.translations.smokingLabel}</Text>
           <Text style={styles.tableValue}>
             {data.termsAndConditions.smokingAllowed ? data.translations.allowed : data.translations.notAllowed}
+          </Text>
+        </View>
+        <View style={styles.tableRow}>
+          <Text style={styles.tableLabel}>{data.translations.suitableForEvents}</Text>
+          <Text style={styles.tableValue}>
+            {data.termsAndConditions.suitableForEvents ? data.translations.allowed : data.translations.notAllowed}
           </Text>
         </View>
 
