@@ -138,3 +138,59 @@ export interface ReservationPDFProps {
     };
   };
 }
+export interface LocalAmenity {
+  label: string;
+  value: string;
+}
+
+export interface PropertyData {
+  title: string;
+  region: string;
+  sleeps: number;
+  overview: string;
+  heroImage: string;
+  images: string[];
+  facilities: string[];
+  groundFloorDetails: string[];
+  mezzanineDetails: string[];
+  firstFloorDetails: string[];
+  outsideDetails: string[];
+  otherDetails: string[];
+  localAmenities: LocalAmenity[];
+  whatWeLove: string[];
+  whatYouShouldKnow: string[];
+  termsAndConditions: {
+    checkIn: string;
+    checkOut: string;
+    energyCosts: string;
+    linenTowels: string;
+    smokingAllowed: boolean;
+    minimumStay: string;
+  };
+  translations: Translations;
+}
+
+export interface Translations {
+  regionLabel: string;
+  sleepsLabel: string;
+  overviewTitle: string;
+  facilitiesTitle: string;
+  interiorTitle: string;
+  groundFloor: string;
+  mezzanine: string;
+  firstFloor: string;
+  outside: string;
+  other: string;
+  locationTitle: string;
+  localAmenitiesTitle: string;
+  whatWeLoveTitle: string;
+  whatYouShouldKnowTitle: string;
+  termsTitle: string;
+  checkInLabel: string;
+  checkOutLabel: string;
+  smokingLabel: string;
+  allowed: string;
+  notAllowed: string;
+  pageLabel: string;
+}
+
