@@ -194,6 +194,7 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
       </Page>
 
       {/* PÁGINA 3: Ubicación, Servicios Cercanos y Términos */}
+      <Page size="A4" style={styles.page}>
         <Text style={styles.sectionTitle}>{data.translations.termsTitle}</Text>
         <View style={styles.tableRow}>
           <Text style={styles.tableLabel}>{data.translations.checkInLabel}</Text>
