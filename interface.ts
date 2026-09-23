@@ -166,15 +166,7 @@ export interface Translations {
   overviewTitle: string;
   facilitiesTitle: string;
   interiorTitle: string;
-  groundFloor: string;
-  mezzanine: string;
-  firstFloor: string;
-  outside: string;
-  other: string;
   locationTitle: string;
-  localAmenitiesTitle: string;
-  whatWeLoveTitle: string;
-  whatYouShouldKnowTitle: string;
   termsTitle: string;
   checkInLabel: string;
   checkOutLabel: string;
@@ -182,5 +174,6 @@ export interface Translations {
   allowed: string;
   notAllowed: string;
   pageLabel: string;
+  suitableForEvents: string;
 }
 
