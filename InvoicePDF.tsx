@@ -295,12 +295,12 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                   </View>
                 </View>
               )}
-            </View>
-          </View>
-          <View style={classes.tableRow}>
-            <Text style={[classes.tableCell, classes.black]}>{translations.guests}</Text>
-            <View>
-              <Text style={classes.cellFlex}>{guestsDetails}</Text>
+              <View style={classes.subTableRow}>
+                <Text style={[classes.tableCell, classes.black]}>{translations.guests}</Text>
+                <View>
+                  <Text style={classes.cellFlex}>{guestsDetails}</Text>
+                </View>
+              </View>
             </View>
           </View>
           <Text style={classes.sectionTitle}>{translations.bookingDetails}</Text>
@@ -423,15 +423,6 @@ const classes = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'flex-end',
-  },
-  tableRow: {
-    display: 'flex',
-    width: `${margin - 4}vw`,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    flexDirection: 'row',
-    minHeight: 30,
-    marginBottom: 20,
   },
   row: {
     display: 'flex',
