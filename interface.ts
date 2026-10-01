@@ -152,14 +152,30 @@ export interface LocalAmenity {
   distance?: string;
 }
 
+export type BedroomDetail = Record<string, number>;
+
 export interface PropertyData {
   title: string;
   region: string;
   city?: string;
   country?: string;
+  propertyType?: string;
   sleeps: number;
   bedroomsCount?: number;
   bathroomsCount?: number;
+  bedroomsDetails?: BedroomDetail[];
+  serviceBedroom?: BedroomDetail;
+  livingRoom?: BedroomDetail;
+  otherRules?: string;
+  operativeDetails?: {
+    extraDetails?: string;
+    experiences?: string;
+  };
+  extraInformation?: {
+    lovedThings?: string[];
+    knownThings?: string[];
+  };
+  cancellationPolicyChile?: string[];
   overview: string;
   heroImage: string;
   images: string[];
@@ -180,9 +196,22 @@ export interface PropertyData {
   };
   translations: {
     regionLabel: string;
+    propertyTypeLabel?: string;
     sleepsLabel: string;
     bedroomsLabel?: string;
     bathroomsLabel?: string;
+    bedroomsTitle?: string;
+    roomLabel?: string;
+    serviceRoomLabel?: string;
+    livingRoomLabel?: string;
+    whatWeLoveLabel?: string;
+    youShouldKnowLabel?: string;
+    notesLabel?: string;
+    extraDetailsLabel?: string;
+    experiencesLabel?: string;
+    cancellationPolicyTitle?: string;
+    cancellationPolicyLabel?: string;
+    securityDepositLabel?: string;
     overviewTitle: string;
     facilitiesTitle: string;
     interiorTitle: string;

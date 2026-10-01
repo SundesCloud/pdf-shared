@@ -19,50 +19,54 @@ const baseUrl = typeof window !== 'undefined' ? window.location.origin : '';
 
 // Registro de fuentes desde public/fonts utilizando las fuentes variables
 Font.register({
-  family: 'Playfair',
+  family: 'Inter',
   fonts: [
     {
-      src: `${baseUrl}/fonts/Playfair-Variable.ttf`,
-      fontWeight: 'normal', // 400
+      src: `${baseUrl}/fonts/Inter-Variable.ttf`,
+      fontWeight: 'normal',
     },
     {
-      src: `${baseUrl}/fonts/Playfair-Variable.ttf`,
-      fontWeight: 'bold', // 700
+      src: `${baseUrl}/fonts/Inter-Variable.ttf`,
+      fontWeight: 'medium',
+    },
+    {
+      src: `${baseUrl}/fonts/Inter-Variable.ttf`,
+      fontWeight: 'bold',
     },
   ],
 });
 
 Font.register({
-  family: 'Inter',
+  family: 'Lato',
   fonts: [
     {
-      src: `${baseUrl}/fonts/Inter-Variable.ttf`,
-      fontWeight: 'normal', // 400
+      src: `${baseUrl}/fonts/Lato-Regular.ttf`,
+      fontWeight: 'normal',
     },
     {
-      src: `${baseUrl}/fonts/Inter-Variable.ttf`,
-      fontWeight: 'medium', // 500
+      src: `${baseUrl}/fonts/Lato-Bold.ttf`,
+      fontWeight: 'bold',
     },
     {
-      src: `${baseUrl}/fonts/Inter-Variable.ttf`,
-      fontWeight: 'bold', // 700
+      src: `${baseUrl}/fonts/Lato-Light.ttf`,
+      fontWeight: 'light',
     },
   ],
 });
 
-const PRIMARY_COLOR = '#1A365D';
-const SECONDARY_COLOR = '#2B6CB0';
-const TEXT_DARK = '#2D3748';
-const TEXT_MUTED = '#718096';
-const BG_LIGHT = '#F8FAFC';
-const BORDER_COLOR = '#E2E8F0';
+const PRIMARY_COLOR = '#131516';
+const SECONDARY_COLOR = '#0F4C75';
+const TEXT_DARK = '#373D3F';
+const TEXT_MUTED = '#6F7C80';
+const BG_LIGHT = '#F0F0F0';
+const BORDER_COLOR = '#DADEDF';
 
 const styles = StyleSheet.create({
   page: {
-    paddingTop: 36,
-    paddingBottom: 48,
-    paddingHorizontal: 36,
-    fontFamily: 'Inter',
+    paddingTop: 34,
+    paddingBottom: 42,
+    paddingHorizontal: 30,
+    fontFamily: 'Lato',
     fontSize: 8.5,
     color: TEXT_DARK,
     backgroundColor: '#FFFFFF',
@@ -78,20 +82,22 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontFamily: 'Playfair',
+    fontFamily: 'Lato',
     fontWeight: 'bold',
     color: PRIMARY_COLOR,
   },
   subtitle: {
-    fontSize: 9,
+    fontSize: 8.5,
+    fontFamily: 'Lato',
     color: TEXT_MUTED,
     marginTop: 2,
   },
   keyMetricsRow: {
     flexDirection: 'row',
     backgroundColor: BG_LIGHT,
-    borderRadius: 4,
-    padding: 8,
+    borderRadius: 6,
+    paddingVertical: 6,
+    paddingHorizontal: 6,
     marginBottom: 12,
     justify: 'space-around',
     borderWidth: 1,
@@ -104,12 +110,13 @@ const styles = StyleSheet.create({
   },
   metricLabel: {
     fontSize: 7.5,
+    fontFamily: 'Lato',
     color: TEXT_MUTED,
     textTransform: 'uppercase',
   },
   metricValue: {
     fontSize: 10,
-    fontFamily: 'Inter',
+    fontFamily: 'Lato',
     fontWeight: 'bold',
     color: PRIMARY_COLOR,
     marginTop: 1,
@@ -123,7 +130,7 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 12,
-    fontFamily: 'Playfair',
+    fontFamily: 'Lato',
     fontWeight: 'bold',
     color: PRIMARY_COLOR,
     marginTop: 10,
@@ -131,9 +138,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: BORDER_COLOR,
     paddingBottom: 3,
+    letterSpacing: 0.2,
   },
   paragraph: {
-    lineHeight: 1.45,
+    fontFamily: 'Lato',
+    fontSize: 9,
+    lineHeight: 1.25,
     marginBottom: 10,
     textAlign: 'justify',
     color: TEXT_DARK,
@@ -152,17 +162,22 @@ const styles = StyleSheet.create({
     borderLeftWidth: 3,
     borderLeftColor: SECONDARY_COLOR,
     marginBottom: 8,
+    borderWidth: 1,
+    borderColor: BORDER_COLOR,
   },
   categoryTitle: {
     fontSize: 8.5,
+    fontFamily: 'Lato',
     fontWeight: 'bold',
     color: SECONDARY_COLOR,
     marginBottom: 4,
   },
   featureItem: {
     fontSize: 7.5,
+    fontFamily: 'Lato',
     color: TEXT_DARK,
     marginBottom: 2,
+    lineHeight: 1.35,
   },
   galleryGrid: {
     flexDirection: 'row',
@@ -196,13 +211,113 @@ const styles = StyleSheet.create({
   },
   tableLabel: {
     width: '45%',
-    fontFamily: 'Inter',
+    fontFamily: 'Lato',
     fontWeight: 'bold',
     color: TEXT_DARK,
   },
   tableValue: {
     width: '55%',
+    fontFamily: 'Lato',
     color: TEXT_MUTED,
+  },
+  summaryTable: {
+    width: '100%',
+    borderWidth: 1,
+    borderColor: BORDER_COLOR,
+    borderRadius: 4,
+    overflow: 'hidden',
+    marginBottom: 14,
+  },
+  summaryRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: BORDER_COLOR,
+    paddingVertical: 7,
+    paddingHorizontal: 10,
+    backgroundColor: '#FFFFFF',
+  },
+  summaryRowAlternate: {
+    backgroundColor: BG_LIGHT,
+  },
+  summaryLabel: {
+    fontFamily: 'Lato',
+    fontSize: 8.5,
+    color: TEXT_MUTED,
+    textTransform: 'uppercase',
+  },
+  summaryValue: {
+    fontFamily: 'Lato',
+    fontWeight: 'bold',
+    fontSize: 9.5,
+    color: PRIMARY_COLOR,
+  },
+  bedroomGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    marginTop: 6,
+  },
+  bedroomCard: {
+    width: '48%',
+    backgroundColor: BG_LIGHT,
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: BORDER_COLOR,
+    padding: 8,
+    marginBottom: 8,
+    minHeight: 56,
+  },
+  bedroomTitle: {
+    fontFamily: 'Lato',
+    fontWeight: 'bold',
+    fontSize: 9,
+    color: PRIMARY_COLOR,
+    marginBottom: 4,
+  },
+  bedroomText: {
+    fontFamily: 'Lato',
+    fontSize: 8.5,
+    lineHeight: 1.35,
+    color: TEXT_DARK,
+  },
+  infoBlock: {
+    marginTop: 10,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: BORDER_COLOR,
+    borderRadius: 4,
+    padding: 8,
+    backgroundColor: BG_LIGHT,
+  },
+  infoList: {
+    marginTop: 4,
+  },
+  infoItem: {
+    fontFamily: 'Lato',
+    fontSize: 8.5,
+    lineHeight: 1.35,
+    color: TEXT_DARK,
+    marginBottom: 3,
+    textAlign: 'justify',
+  },
+  policyBlock: {
+    marginTop: 10,
+    marginBottom: 8,
+    borderWidth: 1,
+    borderColor: BORDER_COLOR,
+    borderRadius: 4,
+    padding: 8,
+    backgroundColor: BG_LIGHT,
+  },
+  policyItem: {
+    fontFamily: 'Lato',
+    fontSize: 8.2,
+    lineHeight: 1.4,
+    color: TEXT_DARK,
+    marginBottom: 5,
+    textAlign: 'justify',
   },
   footer: {
     position: 'absolute',
@@ -233,6 +348,12 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
         </View>
 
         <View style={styles.keyMetricsRow}>
+          {data.propertyType ? (
+            <View style={styles.metricBox}>
+              <Text style={styles.metricLabel}>{data.translations.propertyTypeLabel}</Text>
+              <Text style={styles.metricValue}>{data.propertyType}</Text>
+            </View>
+          ) : null}
           <View style={styles.metricBox}>
             <Text style={styles.metricLabel}>{data.translations.sleepsLabel}</Text>
             <Text style={styles.metricValue}>{data.sleeps}</Text>
@@ -262,8 +383,104 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
         {data.heroImage ? (
           <Image style={styles.heroImage} src={data.heroImage} />
         ) : null}
+
         <Text style={styles.sectionTitle}>{data.translations.overviewTitle}</Text>
         <Text style={styles.paragraph}>{data.overview}</Text>
+
+        {data.bedroomsDetails && data.bedroomsDetails.length > 0 && (
+          <View>
+            <Text style={styles.sectionTitle}>{data.translations.bedroomsTitle || 'Bedrooms'}</Text>
+            <View style={styles.bedroomGrid}>
+              {data.bedroomsDetails.map((bedroom, index) => {
+                const entries = Object.entries(bedroom).filter(([, count]) => Number(count) > 0)
+
+                return (
+                  <View key={index} style={styles.bedroomCard} wrap={false}>
+                    <Text style={styles.bedroomTitle}>
+                      {data.translations.roomLabel || 'Room'} {index + 1}
+                    </Text>
+                    {entries.map(([type, count]) => (
+                      <Text key={`${index}-${type}`} style={styles.bedroomText}>
+                        {count} {type}
+                      </Text>
+                    ))}
+                  </View>
+                )
+              })}
+
+              {data.serviceBedroom && Object.values(data.serviceBedroom).some((count) => Number(count) > 0) && (
+                <View style={styles.bedroomCard} wrap={false}>
+                  <Text style={styles.bedroomTitle}>{data.translations.serviceRoomLabel || 'Service room'}</Text>
+                  {Object.entries(data.serviceBedroom)
+                    .filter(([, count]) => Number(count) > 0)
+                    .map(([type, count]) => (
+                      <Text key={`service-${type}`} style={styles.bedroomText}>
+                        {count} {type}
+                      </Text>
+                    ))}
+                </View>
+              )}
+
+              {data.livingRoom && Object.values(data.livingRoom).some((count) => Number(count) > 0) && (
+                <View style={styles.bedroomCard} wrap={false}>
+                  <Text style={styles.bedroomTitle}>{data.translations.livingRoomLabel || 'Living room'}</Text>
+                  {Object.entries(data.livingRoom)
+                    .filter(([, count]) => Number(count) > 0)
+                    .map(([type, count]) => (
+                      <Text key={`living-${type}`} style={styles.bedroomText}>
+                        {count} {type}
+                      </Text>
+                    ))}
+                </View>
+              )}
+            </View>
+          </View>
+        )}
+
+        {data.otherRules && data.otherRules.trim() ? (
+          <View style={styles.infoBlock}>
+            <Text style={styles.sectionTitle}>{data.translations.notesLabel || 'Notes'}</Text>
+            <Text style={styles.infoItem}>{data.otherRules}</Text>
+          </View>
+        ) : null}
+
+        {data.operativeDetails?.extraDetails && data.operativeDetails.extraDetails.trim() ? (
+          <View style={styles.infoBlock}>
+            <Text style={styles.sectionTitle}>{data.translations.extraDetailsLabel || 'Extra details'}</Text>
+            <Text style={styles.infoItem}>{data.operativeDetails.extraDetails}</Text>
+          </View>
+        ) : null}
+
+        {data.operativeDetails?.experiences && data.operativeDetails.experiences.trim() ? (
+          <View style={styles.infoBlock}>
+            <Text style={styles.sectionTitle}>{data.translations.experiencesLabel || 'Experiences'}</Text>
+            <Text style={styles.infoItem}>{data.operativeDetails.experiences}</Text>
+          </View>
+        ) : null}
+
+        {data.extraInformation &&
+          ((data.extraInformation.lovedThings && data.extraInformation.lovedThings.length > 0) ||
+            (data.extraInformation.knownThings && data.extraInformation.knownThings.length > 0)) && (
+            <View style={styles.infoBlock}>
+              {data.extraInformation.lovedThings && data.extraInformation.lovedThings.length > 0 ? (
+                <View style={styles.infoList}>
+                  <Text style={styles.sectionTitle}>{data.translations.whatWeLoveLabel || 'What we love'}</Text>
+                  {data.extraInformation.lovedThings.map((item, index) => (
+                    <Text key={`love-${index}`} style={styles.infoItem}>• {item}</Text>
+                  ))}
+                </View>
+              ) : null}
+
+              {data.extraInformation.knownThings && data.extraInformation.knownThings.length > 0 ? (
+                <View style={styles.infoList}>
+                  <Text style={styles.sectionTitle}>{data.translations.youShouldKnowLabel || 'What you should know'}</Text>
+                  {data.extraInformation.knownThings.map((item, index) => (
+                    <Text key={`know-${index}`} style={styles.infoItem}>• {item}</Text>
+                  ))}
+                </View>
+              ) : null}
+            </View>
+          )}
 
         {data.categorizedFacilities.length > 0 && (
           <View wrap={true}>
@@ -336,7 +553,40 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
               </Text>
             </View>
           )}
+          {data.termsAndConditions.childrenAllowed !== undefined && (
+            <View style={styles.tableRow}>
+              <Text style={styles.tableLabel}>{data.translations.childrenLabel}</Text>
+              <Text style={styles.tableValue}>
+                {data.termsAndConditions.childrenAllowed ? data.translations.allowed : data.translations.notAllowed}
+              </Text>
+            </View>
+          )}
+          {data.termsAndConditions.securityDeposit !== undefined && (
+            <View style={[styles.tableRow, styles.tableRowAlternate]}>
+              <Text style={styles.tableLabel}>{data.translations.securityDepositLabel}</Text>
+              <Text style={styles.tableValue}>
+                {data.termsAndConditions.securityDeposit.toLocaleString()} {data.priceInfo?.currency || 'CLP'}
+              </Text>
+            </View>
+          )}
+          {data.termsAndConditions.cancellationPolicy && (
+            <View style={styles.tableRow}>
+              <Text style={styles.tableLabel}>{data.translations.cancellationPolicyLabel}</Text>
+              <Text style={styles.tableValue}>{data.translations.cancellationPolicyTitle}</Text>
+            </View>
+          )}
         </View>
+
+        {data.cancellationPolicyChile && data.cancellationPolicyChile.length > 0 && (
+          <View style={styles.policyBlock}>
+            <Text style={styles.sectionTitle}>{data.translations.cancellationPolicyTitle || 'Chile Policy'}</Text>
+            {data.cancellationPolicyChile.map((item, index) => (
+              <Text key={`policy-${index}`} style={styles.policyItem}>
+                • {item}
+              </Text>
+            ))}
+          </View>
+        )}
       </Page>
     </Document>
   );
