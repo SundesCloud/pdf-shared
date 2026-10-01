@@ -138,42 +138,66 @@ export interface ReservationPDFProps {
     };
   };
 }
+
+
+export interface CategorizedFeature {
+  categoryKey: string;
+  categoryLabel: string;
+  items: string[];
+}
+
 export interface LocalAmenity {
-  label: string;
-  value: string;
+  type: string;
+  name: string;
+  distance?: string;
 }
 
 export interface PropertyData {
   title: string;
   region: string;
+  city?: string;
+  country?: string;
   sleeps: number;
+  bedroomsCount?: number;
+  bathroomsCount?: number;
   overview: string;
   heroImage: string;
   images: string[];
-  facilities: string[];
+  categorizedFacilities: CategorizedFeature[];
+  priceInfo?: {
+    pricePerNight?: number;
+    currency?: string;
+  };
   termsAndConditions: {
     checkIn: string;
     checkOut: string;
     smokingAllowed: boolean;
     suitableForEvents: boolean;
+    petsAllowed?: boolean;
+    childrenAllowed?: boolean;
+    cancellationPolicy?: string;
+    securityDeposit?: number;
   };
-  translations: Translations;
+  translations: {
+    regionLabel: string;
+    sleepsLabel: string;
+    bedroomsLabel?: string;
+    bathroomsLabel?: string;
+    overviewTitle: string;
+    facilitiesTitle: string;
+    interiorTitle: string;
+    locationTitle: string;
+    suitableForEvents: string;
+    termsTitle: string;
+    checkInLabel: string;
+    checkOutLabel: string;
+    smokingLabel: string;
+    petsLabel?: string;
+    childrenLabel?: string;
+    allowed: string;
+    notAllowed: string;
+    pageLabel: string;
+    priceFromLabel?: string;
+    perNightLabel?: string;
+  };
 }
-
-export interface Translations {
-  regionLabel: string;
-  sleepsLabel: string;
-  overviewTitle: string;
-  facilitiesTitle: string;
-  interiorTitle: string;
-  locationTitle: string;
-  termsTitle: string;
-  checkInLabel: string;
-  checkOutLabel: string;
-  smokingLabel: string;
-  allowed: string;
-  notAllowed: string;
-  pageLabel: string;
-  suitableForEvents: string;
-}
-
