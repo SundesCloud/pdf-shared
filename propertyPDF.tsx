@@ -191,6 +191,15 @@ const styles = StyleSheet.create({
     objectFit: 'cover',
     borderRadius: 4,
   },
+  mapImage: {
+    width: '100%',
+    height: 150,
+    objectFit: 'cover',
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: BORDER_COLOR,
+    marginBottom: 8,
+  },
   table: {
     width: '100%',
     marginTop: 6,
@@ -522,6 +531,13 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
             </View>
           </>
         )}
+
+        {data.mapImage ? (
+          <View>
+            <Text style={styles.sectionTitle}>{data.translations.mapTitle || 'Location'}</Text>
+            <Image style={styles.mapImage} src={data.mapImage} />
+          </View>
+        ) : null}
 
         <Text style={styles.sectionTitle}>{data.translations.termsTitle}</Text>
         <View style={styles.table}>

@@ -179,6 +179,7 @@ export interface PropertyData {
   overview: string;
   heroImage: string;
   images: string[];
+  mapImage?: string;
   categorizedFacilities: CategorizedFeature[];
   priceInfo?: {
     pricePerNight?: number;
@@ -212,6 +213,7 @@ export interface PropertyData {
     cancellationPolicyTitle?: string;
     cancellationPolicyLabel?: string;
     securityDepositLabel?: string;
+    mapTitle?: string;
     overviewTitle: string;
     facilitiesTitle: string;
     interiorTitle: string;
