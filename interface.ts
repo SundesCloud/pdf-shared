@@ -180,6 +180,7 @@ export interface PropertyData {
   heroImage: string;
   images: string[];
   mapImage?: string;
+  downloadDate: string;
   categorizedFacilities: CategorizedFeature[];
   priceInfo?: {
     pricePerNight?: number;
@@ -214,6 +215,8 @@ export interface PropertyData {
     cancellationPolicyLabel?: string;
     securityDepositLabel?: string;
     mapTitle?: string;
+    downloadedAtLabel?: string;
+    conditionsMayChange?: string;
     overviewTitle: string;
     facilitiesTitle: string;
     interiorTitle: string;

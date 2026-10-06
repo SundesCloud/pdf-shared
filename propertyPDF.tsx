@@ -328,6 +328,18 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     textAlign: 'justify',
   },
+  finalNote: {
+    marginTop: 12,
+    padding: 8,
+    borderLeftWidth: 3,
+    borderLeftColor: SECONDARY_COLOR,
+    backgroundColor: BG_LIGHT,
+    color: TEXT_MUTED,
+    fontFamily: 'Lato',
+    fontSize: 8,
+    lineHeight: 1.35,
+    textAlign: 'justify',
+  },
   footer: {
     position: 'absolute',
     bottom: 16,
@@ -510,8 +522,10 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
           </View>
         )}
 
+        
+
         <View style={styles.footer} fixed>
-          <Text>{data.title}</Text>
+          <Text>{`${data.translations.downloadedAtLabel}: ${data.downloadDate}`}</Text>
           <Text
             render={({ pageNumber, totalPages }) =>
               `${data.translations.pageLabel} ${pageNumber} / ${totalPages}`
@@ -603,6 +617,15 @@ export const PropertyBrochurePDF: React.FC<BrochureProps> = ({ data }) => {
             ))}
           </View>
         )}
+        <Text style={styles.finalNote}>{data.translations.conditionsMayChange}</Text>
+      <View style={styles.footer} fixed>
+        <Text>{`${data.translations.downloadedAtLabel}: ${data.downloadDate}`}</Text>
+        <Text
+          render={({ pageNumber, totalPages }) =>
+            `${data.translations.pageLabel} ${pageNumber} / ${totalPages}`
+          }
+        />
+      </View>
       </Page>
     </Document>
   );
