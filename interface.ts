@@ -151,3 +151,100 @@ export interface ReservationPDFProps {
     };
   };
 }
+
+
+export interface CategorizedFeature {
+  categoryKey: string;
+  categoryLabel: string;
+  items: string[];
+}
+
+export interface LocalAmenity {
+  type: string;
+  name: string;
+  distance?: string;
+}
+
+export type BedroomDetail = Record<string, number>;
+
+export interface PropertyData {
+  title: string;
+  region: string;
+  city?: string;
+  country?: string;
+  propertyType?: string;
+  sleeps: number;
+  bedroomsCount?: number;
+  bathroomsCount?: number;
+  bedroomsDetails?: BedroomDetail[];
+  serviceBedroom?: BedroomDetail;
+  livingRoom?: BedroomDetail;
+  otherRules?: string;
+  operativeDetails?: {
+    extraDetails?: string;
+    experiences?: string;
+  };
+  extraInformation?: {
+    lovedThings?: string[];
+    knownThings?: string[];
+  };
+  cancellationPolicyChile?: string[];
+  overview: string;
+  heroImage: string;
+  images: string[];
+  mapImage?: string;
+  downloadDate: string;
+  categorizedFacilities: CategorizedFeature[];
+  priceInfo?: {
+    pricePerNight?: number;
+    currency?: string;
+  };
+  termsAndConditions: {
+    checkIn: string;
+    checkOut: string;
+    smokingAllowed: boolean;
+    suitableForEvents: boolean;
+    petsAllowed?: boolean;
+    childrenAllowed?: boolean;
+    cancellationPolicy?: string;
+    securityDeposit?: number;
+  };
+  translations: {
+    regionLabel: string;
+    propertyTypeLabel?: string;
+    sleepsLabel: string;
+    bedroomsLabel?: string;
+    bathroomsLabel?: string;
+    bedroomsTitle?: string;
+    roomLabel?: string;
+    serviceRoomLabel?: string;
+    livingRoomLabel?: string;
+    whatWeLoveLabel?: string;
+    youShouldKnowLabel?: string;
+    notesLabel?: string;
+    extraDetailsLabel?: string;
+    experiencesLabel?: string;
+    cancellationPolicyTitle?: string;
+    cancellationPolicyLabel?: string;
+    securityDepositLabel?: string;
+    mapTitle?: string;
+    downloadedAtLabel?: string;
+    conditionsMayChange?: string;
+    overviewTitle: string;
+    facilitiesTitle: string;
+    interiorTitle: string;
+    locationTitle: string;
+    suitableForEvents: string;
+    termsTitle: string;
+    checkInLabel: string;
+    checkOutLabel: string;
+    smokingLabel: string;
+    petsLabel?: string;
+    childrenLabel?: string;
+    allowed: string;
+    notAllowed: string;
+    pageLabel: string;
+    priceFromLabel?: string;
+    perNightLabel?: string;
+  };
+}
