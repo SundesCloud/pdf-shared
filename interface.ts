@@ -14,9 +14,11 @@ export interface ReservationPDFProps {
     created: string; // Fecha formateada
     cancellationPolicy: string;
     totalToPay: string;
+    totalWithoutExtraFees: string;
     total: string;
     totalPaid: number;
     totalEarning: string;
+    totalEarningWithoutExtraFees: string;
     securityDeposit: string;
     photographyDiscountValue?: string;
     changeType?: number;
@@ -47,6 +49,16 @@ export interface ReservationPDFProps {
     total: string;
   }>;
   ownerCosts: Array<{
+    name: string;
+    detail: string;
+    total: string;
+  }>;
+  guestExtraFeeRows?: Array<{
+    name: string;
+    detail: string;
+    total: string;
+  }>;
+  ownerExtraFeeRows?: Array<{
     name: string;
     detail: string;
     total: string;
@@ -112,6 +124,7 @@ export interface ReservationPDFProps {
     download: string;
     groupType: string;
     nationality: string;
+    totalReservation: string;
 
     // Notas para huéspedes
     guestNotes: {
