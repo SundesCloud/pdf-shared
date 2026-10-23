@@ -84,8 +84,17 @@ const styles = StyleSheet.create({
     width: 150,
     height: 40,
     objectFit: 'contain',
-    alignSelf: 'center',
-    marginBottom: 10,
+  },
+  repeatingHeader: {
+    position: 'absolute',
+    top: 16,
+    left: 30,
+    right: 30,
+    height: 40,
+    alignItems: 'center',
+  },
+  contentPage: {
+    paddingTop: 70,
   },
   coverContainer: {
     flexDirection: 'column',
@@ -555,14 +564,18 @@ const Footer = ({ date }: { date: string }) => (
     />
   </View>
 )
-
+const RepeatingHeader = ({ logo }: { logo: string }) => (
+  <View style={styles.repeatingHeader} fixed>
+    <Image src={logo} style={styles.logoHeader} />
+  </View>
+)
 export const RealEstateBrochurePDF = ({ data }: { data: RealEstateBrochureData }) => (
   <Document>
     {/* Página 1: Portada */}
     <Page size="A4" style={styles.page}>
       <View style={styles.coverContainer}>
         <View>
-          <Image src="/images/logos/sundes-negro.svg" style={styles.logoCover} />
+          <Image src={data.logo} style={styles.logoCover} />
           {data.heroImage || (data.images && data.images.length > 0) ? (
             <View style={styles.coverTop}>
               {data.heroImage ? (
@@ -608,9 +621,9 @@ export const RealEstateBrochurePDF = ({ data }: { data: RealEstateBrochureData }
     </Page>
 
     {/* Página 2: Descripción, Especificaciones y Financiero */}
-    <Page size="A4" style={styles.page}>
+    <Page size="A4" style={[styles.page, styles.contentPage]}>
+      <RepeatingHeader logo={data.logo} />
       <View style={styles.pageHeader}>
-        <Image src="/images/logos/sundes-negro.svg" style={styles.logoHeader} />
         <Text style={styles.pageHeaderTitle}>{data.labels.overview}</Text>
       </View>
 
@@ -683,9 +696,9 @@ export const RealEstateBrochurePDF = ({ data }: { data: RealEstateBrochureData }
 
     {/* Página 3: Galería */}
     {data.images.length > 0 ? (
-      <Page size="A4" style={styles.page}>
+      <Page size="A4" style={[styles.page, styles.contentPage]}>
+        <RepeatingHeader logo={data.logo} />
         <View style={styles.pageHeader}>
-          <Image src="/images/logos/sundes-negro.svg" style={styles.logoHeader} />
           <Text style={styles.pageHeaderTitle}>{data.labels.gallery}</Text>
         </View>
         <View style={styles.gallery}>

@@ -256,6 +256,7 @@ export interface RealEstateBrochureData {
   overview: string
   heroImage: string
   images: string[]
+  logo: string
   features: Array<{ categoryLabel: string; items: string[] }>
   specifications: Array<{ label: string; value: string }>
   financial: {
