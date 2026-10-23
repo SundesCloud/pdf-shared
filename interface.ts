@@ -248,3 +248,34 @@ export interface PropertyData {
     perNightLabel?: string;
   };
 }
+export interface RealEstateBrochureData {
+  title: string
+  location: string
+  operation: string
+  propertyType: string
+  overview: string
+  heroImage: string
+  images: string[]
+  features: Array<{ categoryLabel: string; items: string[] }>
+  specifications: Array<{ label: string; value: string }>
+  financial: {
+    price: string
+    commonExpenses?: string
+    tax?: string
+  }
+  downloadDate: string
+  labels: {
+    overview: string
+    specifications: string
+    financial: string
+    features: string
+    gallery: string
+    price: string
+    commonExpenses: string
+    tax: string
+    downloadedAt: string
+    contact: string
+    mapTitle?: string
+  }
+  mapImage?: string
+}
