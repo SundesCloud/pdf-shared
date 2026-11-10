@@ -16,6 +16,9 @@ export interface ReservationPDFProps {
     totalToPay: string;
     totalWithoutExtraFees: string;
     total: string;
+    firstInstallment: string;
+    hasSecondInstallment: boolean;
+    secondInstallment: string;
     totalPaid: number;
     totalEarning: string;
     totalEarningWithoutExtraFees: string;
