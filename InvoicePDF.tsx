@@ -77,7 +77,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                 {translations.paymentConfirm}
               </Text>
               <View style={classes.right}>
-                <Text style={classes.cellFlex}>{financialDetails.amount}</Text>
+                <Text style={classes.cellFlex}>{reservation.firstInstallment}</Text>
               </View>
             </View>
             <View style={classes.rowTight}>
@@ -87,23 +87,8 @@ export function ReservationPDF({ reservationData, owner }: Props) {
               </View>
             </View>
           </>
-          {financialDetails.status === "Full Payment Invoice" &&
-            financialDetails.halfCancellationDaysFormatted !==
-              reservation.checkIn && (
-              <>
-                <View style={[classes.rowTight]}>
-                  <Text style={classes.cellTight}>
-                    {translations.secondPayment}
-                  </Text>
-                  <View style={classes.right}>
-                    <Text style={classes.cellFlexTight}>
-                      {financialDetails.halfCancellationDaysFormatted}
-                    </Text>
-                  </View>
-                </View>
-              </>
-            )}
-          {financialDetails.status === "Second Half Payment Invoice" && (
+          
+          {financialDetails.halfCancellationDaysFormatted !== reservation.checkIn  && (
             <>
               <View style={[classes.row, classes.line]}>
                 <Text style={[classes.cell, classes.larger]}>
@@ -111,7 +96,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
                 </Text>
                 <View style={classes.right}>
                   <Text style={classes.cellFlex}>
-                    {financialDetails.amount}
+                    {reservation.secondInstallment}
                   </Text>
                 </View>
               </View>
@@ -125,26 +110,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
               </View>
             </>
           )}
-          {financialDetails.status === "First Half Payment Invoice" && (
-            <>
-              <View style={[classes.row, classes.line]}>
-                <Text style={classes.cell}>{translations.balanceOwed}</Text>
-                <View style={classes.right}>
-                  <Text style={classes.cellFlex}>
-                    {financialDetails.balanceOwed}
-                  </Text>
-                </View>
-              </View>
-              <View style={classes.rowTight}>
-                <Text style={classes.cellTight}>{translations.balanceDue}</Text>
-                <View style={classes.right}>
-                  <Text style={classes.cellFlexTight}>
-                    {financialDetails.halfCancellationDaysFormatted}
-                  </Text>
-                </View>
-              </View>
-            </>
-          )}
+          
           <View style={[classes.row, classes.line]}>
             <Text style={[classes.cell, classes.black]}>Total:</Text>
             <View style={classes.right}>
