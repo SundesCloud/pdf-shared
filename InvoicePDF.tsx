@@ -88,7 +88,7 @@ export function ReservationPDF({ reservationData, owner }: Props) {
             </View>
           </>
           
-          {financialDetails.halfCancellationDaysFormatted !== reservation.checkIn  && (
+          {reservation.hasSecondInstallment && (
             <>
               <View style={[classes.row, classes.line]}>
                 <Text style={[classes.cell, classes.larger]}>
